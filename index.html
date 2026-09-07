@@ -1,13 +1,247 @@
 <!DOCTYPE html>
-<html>
+<html lang="sw">
 <head>
-    <title>My First Website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HSE Fashion</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#fff8f3;
+    color:#333;
+}
+
+header{
+    background:#6b0f1a;
+    color:white;
+    padding:18px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:15px;
+    font-size:14px;
+}
+
+.hero{
+    min-height:500px;
+    padding:70px 25px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:linear-gradient(135deg,#6b0f1a,#a52a3a,#e3b23c);
+    color:white;
+}
+
+.hero-content{
+    max-width:700px;
+}
+
+.hero h1{
+    font-size:52px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:20px;
+    line-height:1.6;
+    margin-bottom:25px;
+}
+
+.btn{
+    display:inline-block;
+    background:#f5c542;
+    color:#5a0b14;
+    padding:14px 28px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+section{
+    padding:55px 20px;
+    text-align:center;
+}
+
+section h2{
+    color:#6b0f1a;
+    font-size:32px;
+    margin-bottom:15px;
+}
+
+.intro{
+    max-width:700px;
+    margin:auto;
+    line-height:1.7;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    max-width:1000px;
+    margin:35px auto 0;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    padding:25px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+.card .icon{
+    font-size:55px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    color:#6b0f1a;
+    margin-bottom:10px;
+}
+
+.about{
+    background:#f3df9b;
+}
+
+.contact{
+    background:#6b0f1a;
+    color:white;
+}
+
+.contact h2{
+    color:#f5c542;
+}
+
+footer{
+    background:#3d080f;
+    color:white;
+    text-align:center;
+    padding:20px;
+    font-size:14px;
+}
+
+@media(max-width:600px){
+    nav a{
+        margin-left:8px;
+        font-size:12px;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+}
+</style>
 </head>
+
 <body>
 
-    <h1>Karibu kwenye Website Yangu</h1>
+<header>
+    <div class="logo">HSE Fashion</div>
 
-    <p>Hii ni project yangu ya kwanza kwenye GitHub.</p>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#collection">Collection</a>
+        <a href="#about">Kuhusu</a>
+        <a href="#contact">Mawasiliano</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>HSE Fashion</h1>
+
+        <p>
+            Karibu HSE Fashion — mahali ambapo mtindo,
+            ubunifu na urembo hukutana.
+        </p>
+
+        <a href="#collection" class="btn">
+            Tazama Collection
+        </a>
+    </div>
+</section>
+
+<section id="collection">
+    <h2>Collection Yetu</h2>
+
+    <p class="intro">
+        Gundua mitindo mbalimbali ya kisasa iliyotengenezwa
+        kwa ajili ya kuleta mwonekano wa kipekee.
+    </p>
+
+    <div class="products">
+
+        <div class="card">
+            <div class="icon">👗</div>
+            <h3>Elegant Dresses</h3>
+            <p>Mavazi yenye mwonekano wa kisasa na wa kuvutia.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">👚</div>
+            <h3>Fashion Wear</h3>
+            <p>Mitindo ya kila siku yenye ubunifu wa kipekee.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">✨</div>
+            <h3>Special Collection</h3>
+            <p>Collection maalumu kwa matukio na hafla mbalimbali.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="about" id="about">
+    <h2>Kuhusu HSE Fashion</h2>
+
+    <p class="intro">
+        HSE Fashion ni brand inayolenga kuleta mitindo
+        yenye ubunifu, ubora na mwonekano wa kipekee.
+        Tunataka kila mteja ajisikie mwenye kujiamini
+        kupitia fashion.
+    </p>
+</section>
+
+<section class="contact" id="contact">
+    <h2>Wasiliana Nasi</h2>
+
+    <p style="margin:20px 0;">
+        Kwa oda na mawasiliano zaidi, karibu kuwasiliana
+        na HSE Fashion.
+    </p>
+
+    <a href="mailto:info@hsefashion.com" class="btn">
+        Wasiliana Nasi
+    </a>
+</section>
+
+<footer>
+    © 2026 HSE Fashion. All Rights Reserved.
+</footer>
 
 </body>
 </html>
