@@ -22,22 +22,32 @@ body{
 header{
     background:#6b0f1a;
     color:white;
-    padding:18px 20px;
+    padding:18px 25px;
     display:flex;
     justify-content:space-between;
     align-items:center;
+    box-shadow:0 3px 12px rgba(0,0,0,0.18);
+    position:relative;
+    z-index:10;
 }
 
 .logo{
-    font-size:26px;
+    font-size:28px;
     font-weight:bold;
+    letter-spacing:1px;
 }
 
 nav a{
     color:white;
     text-decoration:none;
-    margin-left:15px;
-    font-size:14px;
+    margin-left:22px;
+    font-size:16px;
+    font-weight:500;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#f6c343;
 }
 
 .hero{
