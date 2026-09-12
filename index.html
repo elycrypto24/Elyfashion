@@ -216,6 +216,143 @@ footer{
         font-size:17px;
     }
 }
+    /* ===== HSE FASHION NEW LUXURY DESIGN ===== */
+
+header{
+    background:#6b0f1a;
+    padding:10px 45px;
+    min-height:110px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+header img{
+    height:150px !important;
+    width:auto !important;
+    object-fit:contain;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:8px;
+    padding:10px 16px;
+    border-radius:25px;
+    font-size:16px;
+    font-weight:bold;
+}
+
+nav a[href="#home"]{
+    background:#f5c542;
+    color:#6b0f1a;
+}
+
+nav a:hover{
+    background:#f5c542;
+    color:#6b0f1a;
+}
+
+.hero{
+    min-height:600px;
+    padding:80px 25px 120px;
+    position:relative;
+    overflow:hidden;
+    background:
+        linear-gradient(rgba(107,15,26,0.35),rgba(107,15,26,0.45)),
+        url("IMG-20260912-WA0008(1).jpg");
+    background-size:cover;
+    background-position:center;
+}
+
+.hero h1{
+    display:none;
+}
+
+.hero p{
+    font-size:21px;
+    line-height:1.7;
+    max-width:700px;
+    margin:0 auto 30px;
+    text-shadow:0 2px 5px rgba(0,0,0,0.4);
+}
+
+.btn{
+    background:#f5c542;
+    color:#6b0f1a;
+    border-radius:30px;
+    padding:15px 32px;
+    font-weight:bold;
+}
+
+.collection{
+    background:#fff8f3;
+    padding-top:70px;
+}
+
+.collection h2{
+    color:#6b0f1a;
+    font-size:36px;
+    text-align:center;
+    position:relative;
+    margin-bottom:20px;
+}
+
+.collection h2::after{
+    content:"";
+    display:block;
+    width:80px;
+    height:4px;
+    background:#f5c542;
+    margin:15px auto;
+    border-radius:5px;
+}
+
+@media(max-width:600px){
+
+    header{
+        padding:8px 15px;
+        min-height:auto;
+        flex-direction:column;
+        gap:5px;
+    }
+
+    header img{
+        height:125px !important;
+    }
+
+    nav{
+        width:100%;
+        justify-content:center;
+        flex-wrap:wrap;
+        gap:3px;
+    }
+
+    nav a{
+        margin-left:0;
+        padding:8px 9px;
+        font-size:12px;
+    }
+
+    .hero{
+        min-height:500px;
+        padding:70px 20px 100px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .collection h2{
+        font-size:30px;
+    }
+}
 </style>
 </head>
 
@@ -234,12 +371,15 @@ footer{
 
 <section class="hero" id="home">
     <div class="hero-content">
-        <h1>HSE Fashion</h1>
+        
 
-        <p>
-            Karibu HSE Fashion — mahali ambapo mtindo,
-            ubunifu na urembo hukutana.
-        </p>
+    <p>
+        Karibu HSE Fashion — mahali
+        ambapo mtindo,
+        ubunifu na urembo hukutana.
+    </p>
+
+    
 
         <a href="#collection" class="btn">
             Tazama Collection
