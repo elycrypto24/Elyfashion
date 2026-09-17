@@ -304,36 +304,54 @@ nav a:hover{
 }
 
 .hero{
-    min-height:600px;
-    padding:80px 25px 120px;
+    min-height:700px;
+padding:80px 25px 120px;
     position:relative;
     overflow:hidden;
     background:
         linear-gradient(rgba(107,15,26,0.35),rgba(107,15,26,0.45)),
 url("New hero.png");
-    background-size:100% auto;
+    background-size:cover;
 background-repeat:no-repeat;
     background-position:center;
 }
-
+.hero::after{
+    content:"";
+    position:absolute;
+    left:-10%;
+    bottom:-45px;
+    width:120%;
+    height:90px;
+    border-radius:50%;
+    border-top:12px solid #f5c542;
+    box-shadow:0 -4px 0 #d99f24;
+    pointer-events:none;
+}
     .hero h1{
-    display:block;
+    color:#f5c542;
+    font-size:58px;
+    font-weight:bold;
+    margin:0 0 5px;
+    text-align:center;
+    text-shadow:0 3px 6px rgba(0,0,0,0.5);
+}
+    .hero h2{
     color:white;
-    font-size:32px;
-    margin:0 0 10px;
-    position:relative;
-    top:-20px;
+    font-size:58px;
+    font-weight:bold;
+    margin:0 0 12px;
+    text-align:center;
+    text-shadow:0 3px 6px rgba(0,0,0,0.5);
 }
 
 .hero p{
     color:white;
-    position:relative;
-    top:-20px;
-    font-size:21px;
-    line-height:1.7;
+    font-size:22px;
+    line-height:1.5;
     max-width:700px;
-    margin:0 auto 30px;
-    text-shadow:0 2px 5px rgba(0,0,0,0.4);
+    margin:0 auto 28px;
+    text-align:center;
+    text-shadow:0 2px 5px rgba(0,0,0,0.5);
 }
 
 .btn{
@@ -429,16 +447,15 @@ background-repeat:no-repeat;
 
     <h1>Karibu</h1>
 
+<h2>HSE Fashion</h2>
+
 <p>
-    HSE Fashion – mahali ambapo mtindo,
-    ubunifu na urembo hukutana.
+    Mahali ambapo mtindo, ubunifu na urembo hukutana.
 </p>
 
-    
-
-        <a href="#collection" class="btn">
-            Tazama Collection
-        </a>
+<a href="#collection" class="btn">
+    Tazama Collection →
+</a>
     </div>
 </section>
 
