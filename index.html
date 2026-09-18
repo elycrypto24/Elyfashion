@@ -318,14 +318,14 @@ background-repeat:no-repeat;
 .hero::after{
     content:"";
     position:absolute;
-    left:-10%;
-    bottom:-45px;
-    width:120%;
+    left:0;
+    right:0;
+    bottom:0;
     height:90px;
-    border-radius:0 0 50% 50%;
-    border-bottom:12px solid #f5c542;
-    box-shadow:0 4px 0 #d99f24;
     pointer-events:none;
+    background:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'><path d='M0 45 C360 120 1080 120 1440 45 L1440 120 L0 120 Z' fill='%236b1020'/><path d='M0 45 C360 120 1080 120 1440 45' fill='none' stroke='%23d4af37' stroke-width='22'/><path d='M0 45 C360 115 1080 115 1440 45' fill='none' stroke='%23f9d65c' stroke-width='7'/></svg>")
+    no-repeat center bottom/100% 100%;
 }
     .hero h1{
     color:#f5c542;
