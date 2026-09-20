@@ -846,7 +846,16 @@ border:1px solid #ddd;
 border-radius:10px;
 box-sizing:border-box;">
 
-<textarea
+<input type="text"
+id="productPrice"
+placeholder="💰 Bei ya bidhaa"
+style="width:100%;
+padding:13px;
+margin-bottom:10px;
+border:1px solid #ddd;
+border-radius:10px;
+box-sizing:border-box;">
+      <textarea
 id="orderNote"
 placeholder="📝 Maelezo ya ziada kuhusu oda"
 style="width:100%;
@@ -895,6 +904,8 @@ function sendOrderToWhatsApp() {
     const phone = document.getElementById("customerPhone").value;
     const location = document.getElementById("deliveryLocation").value;
     const product = document.getElementById("productName").value;
+    const price =
+document.getElementById("productPrice").value;
     const note = document.getElementById("orderNote").value;
 
     const message =
@@ -903,7 +914,10 @@ function sendOrderToWhatsApp() {
         "📞 Simu: " + phone + "\n" +
         "📍 Delivery: " + location + "\n" +
         "🛍️ Bidhaa: " + product + "\n" +
-        "📝 Maelezo: " + note;
+    
+"💰 Bei: " + price + "\n" +
+"📝 Maelezo: " + note;
+    
 
     const whatsappNumber = "255XXXXXXXXXX";
 
