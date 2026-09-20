@@ -763,32 +763,151 @@ margin-bottom:10px;">
 
 </div>
 
-  <h3>📦 Delivery & Order Information</h3>
+  <div style="background:linear-gradient(135deg,#fff8ef,#fde8ef);
+padding:20px;
+border-radius:22px;
+margin:20px auto;
+max-width:600px;
+box-shadow:0 4px 15px rgba(100,0,30,0.10);">
 
-  <p>
-    Tunakuletea oda yako kulingana na eneo ulilochagua.
-    Gharama na muda wa delivery utathibitishwa wakati wa kuagiza.
-  </p>
+  <div style="background:#d90000;
+  color:white;
+  padding:15px;
+  border-radius:18px;
+  text-align:center;
+  margin-bottom:15px;">
+    <h3 style="margin:0;">📦 Delivery & Order Information</h3>
+  </div>
 
-  <p>
-    Ili oda yako iweze kushughulikiwa vizuri, tafadhali toa:
-  </p>
+  <div style="background:white;
+  padding:18px;
+  border-radius:16px;
+  margin-bottom:15px;
+  text-align:center;">
+    <p style="margin:0;">
+      Tunakuletea oda yako kulingana na eneo ulilochagua.
+      Gharama na muda wa delivery utathibitishwa wakati wa kuagiza.
+    </p>
+  </div>
 
-  <p>
-    📍 Eneo unalopatikana<br>
-    📞 Namba ya simu<br>
-    👤 Jina la mpokeaji<br>
-    🛍️ Bidhaa uliyoagiza
-  </p>
+  <div style="background:#fff0f5;
+padding:18px;
+border-radius:16px;
+margin-bottom:15px;">
 
-  <p>
-    Kwa maelezo zaidi kuhusu oda yako,
-    wasiliana nasi kupitia WhatsApp.
-  </p>
+<h4 style="margin:0 0 12px;
+color:#7b1028;
+text-align:center;">
+📋 Taarifa za Oda
+</h4>
+
+<input type="text"
+id="customerName"
+placeholder="👤 Jina la mpokeaji"
+style="width:100%;
+padding:13px;
+margin-bottom:10px;
+border:1px solid #ddd;
+border-radius:10px;
+box-sizing:border-box;">
+
+<input type="tel"
+id="customerPhone"
+placeholder="📞 Namba ya simu"
+style="width:100%;
+padding:13px;
+margin-bottom:10px;
+border:1px solid #ddd;
+border-radius:10px;
+box-sizing:border-box;">
+
+<input type="text"
+id="deliveryLocation"
+placeholder="📍 Eneo la delivery"
+style="width:100%;
+padding:13px;
+margin-bottom:10px;
+border:1px solid #ddd;
+border-radius:10px;
+box-sizing:border-box;">
+
+<input type="text"
+id="productName"
+placeholder="🛍️ Jina la bidhaa"
+style="width:100%;
+padding:13px;
+margin-bottom:10px;
+border:1px solid #ddd;
+border-radius:10px;
+box-sizing:border-box;">
+
+<textarea
+id="orderNote"
+placeholder="📝 Maelezo ya ziada kuhusu oda"
+style="width:100%;
+padding:13px;
+margin-bottom:10px;
+border:1px solid #ddd;
+border-radius:10px;
+box-sizing:border-box;
+min-height:90px;"></textarea>
+
+<button
+onclick="sendOrderToWhatsApp()"
+style="width:100%;
+background:#25D366;
+color:white;
+border:none;
+padding:14px;
+border-radius:12px;
+font-size:17px;
+font-weight:bold;
+cursor:pointer;">
+💬 Agiza kupitia WhatsApp
+</button>
+
+</div>
+
+  <div style="background:#d90000;
+  color:white;
+  padding:15px;
+  border-radius:18px;
+  text-align:center;">
+    <p style="margin:0;">
+      💬 Kwa maelezo zaidi kuhusu oda yako,
+      wasiliana nasi kupitia WhatsApp.
+    </p>
+  </div>
+
+</div>
 </section>
 <footer>
     © 2026 HSE Fashion. All Rights Reserved.
 </footer>
+<script>
+function sendOrderToWhatsApp() {
+    const name = document.getElementById("customerName").value;
+    const phone = document.getElementById("customerPhone").value;
+    const location = document.getElementById("deliveryLocation").value;
+    const product = document.getElementById("productName").value;
+    const note = document.getElementById("orderNote").value;
 
+    const message =
+        "🛍️ HSE Fashion - Oda\n\n" +
+        "👤 Jina: " + name + "\n" +
+        "📞 Simu: " + phone + "\n" +
+        "📍 Delivery: " + location + "\n" +
+        "🛍️ Bidhaa: " + product + "\n" +
+        "📝 Maelezo: " + note;
+
+    const whatsappNumber = "255XXXXXXXXXX";
+
+    const whatsappURL =
+        "https://wa.me/" + whatsappNumber +
+        "?text=" + encodeURIComponent(message);
+
+    window.open(whatsappURL, "_blank");
+}
+</script>
 </body>
 </html>
