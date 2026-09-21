@@ -293,14 +293,14 @@ nav a{
     font-weight:bold;
 }
 
-nav a[href="#home"]{
+nav a.active{
     background:#f5c542;
     color:#6b0f1a;
 }
 
 nav a:hover{
-    background:#f5c542;
-    color:#6b0f1a;
+    background:rgba(255,255,255,0.10);
+    color:white;
 }
 
 .hero{
@@ -1188,6 +1188,15 @@ document.getElementById("productPrice").value;
 
     window.open(whatsappURL, "_blank");
 }
+    document.querySelectorAll('nav a').forEach(function(link){
+    link.addEventListener('click', function(){
+        document.querySelectorAll('nav a').forEach(function(item){
+            item.classList.remove('active');
+        });
+
+        this.classList.add('active');
+    });
+});
 </script>
 </body>
 </html>
