@@ -727,98 +727,250 @@ margin-bottom:15px;">
         </p>
     </div>
 
-    <div style="background:#d90000;
+    <style>
+.bank-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:15px;
+  margin-bottom:20px;
+}
+
+.bank-card{
+  background:#ffffff;
+  border:2px solid #e5b93f;
+  border-radius:18px;
+  padding:14px;
+  text-align:center;
+  cursor:pointer;
+  transition:transform .2s,box-shadow .2s;
+}
+
+.bank-card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 5px 15px rgba(0,0,0,.12);
+}
+
+.bank-card img{
+  width:95px;
+  max-width:70%;
+  height:65px;
+  object-fit:contain;
+  margin-bottom:6px;
+}
+
+.bank-card h3{
+  margin:4px 0 8px;
+  font-size:18px;
+}
+
+.bank-arrow{
+  display:inline-block;
+  background:#90002b;
+  color:white;
+  width:36px;
+  height:36px;
+  line-height:36px;
+  border-radius:50%;
+  font-size:22px;
+  font-weight:bold;
+}
+
+.bank-details{
+  display:none;
+  background:#ffffff;
+  border:2px solid #e5b93f;
+  border-radius:18px;
+  padding:18px;
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.bank-details img{
+  width:105px;
+  max-width:45%;
+  height:70px;
+  object-fit:contain;
+}
+
+.bank-details h3{
+  color:#90002b;
+  margin:8px 0 12px;
+}
+
+.bank-info{
+  background:#fff0f7;
+  border-radius:15px;
+  padding:12px;
+  margin:10px 0;
+}
+
+.copy-btn{
+  background:#90002b;
+  color:white;
+  border:0;
+  border-radius:12px;
+  padding:11px 20px;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.close-btn{
+  background:#f5e5ec;
+  color:#90002b;
+  border:0;
+  border-radius:50%;
+  width:35px;
+  height:35px;
+  font-size:20px;
+  float:right;
+  cursor:pointer;
+}
+</style>
+
+<div style="background:#90002b;
 color:white;
-padding:15px;
+padding:16px;
 border-radius:18px;
 text-align:center;
-margin-bottom:10px;">
-  <h3 style="margin:0;">🏦 Benki</h3>
+margin-bottom:12px;">
+
+<h3 style="margin:0;">
+🏦 Malipo kwa njia ya Bank / Digital Bank
+</h3>
+
 </div>
-<div style="background:#ffffff;
+
+<div style="background:#ffd9e5;
 padding:15px;
 border-radius:15px;
 text-align:center;
-border:1px solid #e5b93f;
-margin-bottom:20px;">
+margin-bottom:18px;">
 
-<img src="crdb-bank-logo.png"
-alt="CRDB Bank"
-style="width:150px;
-max-width:70%;
-height:auto;
-margin-bottom:10px;">
-
-<h3 style="margin:0 0 8px 0;">CRDB Bank</h3>
-
-<p style="margin:4px 0;"><strong>Account:</strong> 0152629119000</p>
-
-<p style="margin:4px 0;"><strong>Name:</strong> ELIAS KIMATH</p>
+<p style="margin:0;">
+Tafadhali thibitisha taarifa zote za malipo baada ya kuthibitisha oda yako kupitia WhatsApp.
+</p>
 
 </div>
-        <div style="background:#ffffff;
-padding:15px;
-border-radius:15px;
-text-align:center;
-border:1px solid #5b93f3;
-margin-bottom:20px;">
 
-<img src="nmb-bank-logo.png"
-alt="NMB Bank"
-style="width:150px;
-max-width:70%;
-height:auto;
-margin-bottom:10px;">
+<div class="bank-grid">
 
-<h3 style="margin:0 0 8px 0;">NMB Bank</h3>
+<div class="bank-card" onclick="openBank('crdb-details')">
+<img src="crdb-bank-logo.png" alt="CRDB Bank">
+<h3>CRDB Bank</h3>
+<span class="bank-arrow">›</span>
+</div>
 
-<p style="margin:4px 0;"><strong>Branch:</strong> Mwalimu House</p>
+<div class="bank-card" onclick="openBank('nmb-details')">
+<img src="nmb-bank-logo.png" alt="NMB Bank">
+<h3>NMB Bank</h3>
+<span class="bank-arrow">›</span>
+</div>
 
-<p style="margin:4px 0;"><strong>Account:</strong> 20310049252</p>
+<div class="bank-card" onclick="openBank('binance-details')">
+<img src="Binance bank.png" alt="Binance">
+<h3>Binance</h3>
+<span class="bank-arrow">›</span>
+</div>
 
-<p style="margin:4px 0;"><strong>Name:</strong> ELIAS GRAYSON KIMATH</p>
+<div class="bank-card" onclick="openBank('blink-details')">
+<img src="Blink wallet.png" alt="Blink Wallet">
+<h3>Blink Wallet</h3>
+<span class="bank-arrow">›</span>
+</div>
 
 </div>
-   <div style="background:#fff9e6;
-padding:15px;
-border-radius:15px;
-text-align:center;
-border:1px solid #e5b93f;
-margin-bottom:20px;">
 
-<img src="Binance bank.png"
-alt="Binance"
-style="width:150px;
-max-width:70%;
-height:auto;
-margin-bottom:10px;">
+<div id="crdb-details" class="bank-details">
+<button class="close-btn" onclick="closeBank('crdb-details')">×</button>
 
-<h3 style="margin:0 0 8px 0;">Binance</h3>
+<img src="crdb-bank-logo.png" alt="CRDB Bank">
 
-<p style="margin:4px 0;"><strong>UID:</strong> 1078545308</p>
+<h3>CRDB Bank</h3>
 
+<div class="bank-info">
+<p><strong>Account:</strong> 0152629119000</p>
+<p><strong>Name:</strong> ELIAS KIMATH</p>
 </div>
-       <div style="background:#ffffff;
-padding:15px;
-border-radius:15px;
-text-align:center;
-border:1px solid #e5b93f;
-margin-bottom:20px;">
 
-<img src="Blink wallet.png"
-alt="Blink Wallet"
-style="width:150px;
-max-width:70%;
-height:auto;
-margin-bottom:10px;">
-
-<h3 style="margin:0 0 8px 0;">Blink Wallet</h3>
-
-<p style="margin:4px 0;"><strong>Lightning Address:</strong></p>
-
-<p style="margin:4px 0;">ellygray_24@blink.sv</p>
-
+<button class="copy-btn"
+onclick="copyPayment('0152629119000')">
+Nakili Namba
+</button>
 </div>
+
+<div id="nmb-details" class="bank-details">
+<button class="close-btn" onclick="closeBank('nmb-details')">×</button>
+
+<img src="nmb-bank-logo.png" alt="NMB Bank">
+
+<h3>NMB Bank</h3>
+
+<div class="bank-info">
+<p><strong>Branch:</strong> Mwalimu House</p>
+<p><strong>Account:</strong> 20310049252</p>
+<p><strong>Name:</strong> ELIAS GRAYSON KIMATH</p>
+</div>
+
+<button class="copy-btn"
+onclick="copyPayment('20310049252')">
+Nakili Namba
+</button>
+</div>
+
+<div id="binance-details" class="bank-details">
+<button class="close-btn" onclick="closeBank('binance-details')">×</button>
+
+<img src="Binance bank.png" alt="Binance">
+
+<h3>Binance</h3>
+
+<div class="bank-info">
+<p><strong>UID:</strong> 1078545308</p>
+<p><strong>Name:</strong> ELIAS GRAYSON KIMATH</p>
+</div>
+
+<button class="copy-btn"
+onclick="copyPayment('1078545308')">
+Nakili UID
+</button>
+</div>
+
+<div id="blink-details" class="bank-details">
+<button class="close-btn" onclick="closeBank('blink-details')">×</button>
+
+<img src="Blink wallet.png" alt="Blink Wallet">
+
+<h3>Blink Wallet</h3>
+
+<div class="bank-info">
+<p><strong>Lightning Address:</strong></p>
+<p>ellygray_24@blink.sv</p>
+</div>
+
+<button class="copy-btn"
+onclick="copyPayment('ellygray_24@blink.sv')">
+Nakili Address
+</button>
+</div>
+
+<script>
+function openBank(id){
+  document.querySelectorAll('.bank-details').forEach(function(box){
+    box.style.display='none';
+  });
+
+  document.getElementById(id).style.display='block';
+}
+
+function closeBank(id){
+  document.getElementById(id).style.display='none';
+}
+
+function copyPayment(text){
+  navigator.clipboard.writeText(text);
+}
+</script>
         <div style="background:#fff0c7;
     padding:15px;
     border-radius:15px;
