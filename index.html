@@ -248,7 +248,51 @@ header{
     justify-content:space-between;
     position:relative;
     overflow:hidden;
+
+.language-switcher {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    z-index: 10;
 }
+
+.language-btn {
+    background: #f5c542;
+    color: #6b0f1a;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.language-menu {
+    display: none;
+    position: absolute;
+    top: 42px;
+    right: 0;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    overflow: hidden;
+    min-width: 150px;
+}
+
+.language-menu button {
+    display: block;
+    width: 100%;
+    padding: 10px 12px;
+    border: none;
+    background: white;
+    text-align: left;
+    cursor: pointer;
+}
+
+.language-menu button:hover {
+    background: #f5c542;
+}
+
+header::before{
     header::before{
     content:"";
     position:absolute;
@@ -472,7 +516,18 @@ background-repeat:no-repeat;
 <a href="#delivery">Delivery</a>
 <a href="#contact">Mawasiliano</a>
     </nav>
-</header>
+
+        <div class="language-switcher">
+            <button class="language-btn" type="button">🌐 Lugha ▾</button>
+
+            <div class="language-menu">
+                <button type="button">🇹🇿 Kiswahili</button>
+                <button type="button">🇬🇧 English</button>
+                <button type="button">🇰🇲 Comorian</button>
+            </div>
+        </div>
+
+    </header>
 
 <section class="hero" id="home">
     <div class="hero-content">
@@ -1643,6 +1698,24 @@ document.getElementById("productPrice").value;
 
         this.classList.add('active');
     });
+});
+    
+// LANGUAGE SWITCHER
+const languageBtn = document.querySelector('.language-btn');
+const languageMenu = document.querySelector('.language-menu');
+
+languageBtn.addEventListener('click', function(event) {
+    event.stopPropagation();
+
+    if (languageMenu.style.display === 'block') {
+        languageMenu.style.display = 'none';
+    } else {
+        languageMenu.style.display = 'block';
+    }
+});
+
+document.addEventListener('click', function() {
+    languageMenu.style.display = 'none';
 });
 </script>
 </body>
