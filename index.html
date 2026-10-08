@@ -507,6 +507,17 @@ background-repeat:no-repeat;
 <body>
 
 <header>
+
+<div class="language-switcher">
+    <button class="language-btn" type="button">🌐 Lugha ▼</button>
+
+    <div class="language-menu">
+        <button type="button">🇰🇪 Kiswahili</button>
+        <button type="button">🇬🇧 English</button>
+        <button type="button">🇰🇲 Comorian</button>
+    </div>
+</div>
+
 <img src="Hse logo.png" alt="HSE Fashion Logo">
 
     <nav>
@@ -1693,5 +1704,24 @@ document.getElementById("productPrice").value;
 });
     
 </script>
+  <script>
+const languageBtn = document.querySelector('.language-btn');
+const languageMenu = document.querySelector('.language-menu');
+
+if (languageBtn && languageMenu) {
+    languageBtn.addEventListener('click', function(event) {
+        event.stopPropagation();
+
+        languageMenu.style.display =
+            languageMenu.style.display === 'block'
+                ? 'none'
+                : 'block';
+    });
+
+    document.addEventListener('click', function() {
+        languageMenu.style.display = 'none';
+    });
+}
+</script>  
 </body>
 </html>
