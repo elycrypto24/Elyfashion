@@ -1705,24 +1705,111 @@ document.getElementById("productPrice").value;
 });
     
 </script>
-  <script>
-const languageBtn = document.querySelector('.language-btn');
-const languageMenu = document.querySelector('.language-menu');
+    <script>
+const languageBtn =
+document.querySelector('.language-btn');
+
+const languageMenu =
+document.querySelector('.language-menu');
 
 if (languageBtn && languageMenu) {
+
     languageBtn.addEventListener('click', function(event) {
         event.stopPropagation();
 
         languageMenu.style.display =
             languageMenu.style.display === 'block'
-                ? 'none'
-                : 'block';
+            ? 'none'
+            : 'block';
     });
 
     document.addEventListener('click', function() {
         languageMenu.style.display = 'none';
     });
+
+    const languageButtons = languageMenu.querySelectorAll('button');
+
+    languageButtons[0].addEventListener('click', function() {
+        changeLanguage('sw');
+    });
+
+    languageButtons[1].addEventListener('click', function() {
+        changeLanguage('en');
+    });
+
+    languageButtons[2].addEventListener('click', function() {
+        changeLanguage('km');
+    });
 }
-</script>  
+
+function changeLanguage(language) {
+
+    const translations = {
+
+        sw: {
+            home: 'Nyumbani',
+            collection: 'Mkusanyiko',
+            about: 'Kuhusu/Malipo',
+            delivery: 'Uwasilishaji',
+            contact: 'Mawasiliano',
+            collectionTitle: 'Collection Yetu',
+            order: 'Agiza Sasa',
+            productDescription:
+                'Mavazi yenye mwonekano wa kisasa na wa kuvutia.'
+        },
+
+        en: {
+            home: 'Home',
+            collection: 'Collection',
+            about: 'About/Payments',
+            delivery: 'Delivery',
+            contact: 'Contact',
+            collectionTitle: 'Our Collection',
+            order: 'Order Now',
+            productDescription:
+                'Fashionable outfits with a modern and elegant look.'
+        },
+
+        km: {
+            home: 'Nyumbani',
+            collection: 'Mkusanyiko',
+            about: 'Kuhusu/Malipo',
+            delivery: 'Uwasilishaji',
+            contact: 'Mawasiliano',
+            collectionTitle: 'Mkusanyiko Wetu',
+            order: 'Agiza Sasa',
+            productDescription:
+                'Mavazi yenye mwonekano wa kisasa na wa kuvutia.'
+        }
+    };
+
+    const t = translations[language];
+
+    document.querySelector('nav a[href="#home"]').textContent = t.home;
+    document.querySelector('nav a[href="#collection"]').textContent = t.collection;
+    document.querySelector('nav a[href="#about"]').textContent = t.about;
+    document.querySelector('nav a[href="#delivery"]').textContent = t.delivery;
+    document.querySelector('nav a[href="#contact"]').textContent = t.contact;
+
+    const collectionTitle = document.querySelector('#collection h2');
+    if (collectionTitle) {
+        collectionTitle.textContent = t.collectionTitle;
+    }
+
+    document.querySelectorAll('.card .btn').forEach(function(button) {
+        button.textContent = t.order;
+    });
+
+    document.querySelectorAll('.card').forEach(function(card) {
+        const description = card.querySelector('p');
+
+        if (description && !description.querySelector('strong')) {
+            description.textContent = t.productDescription;
+        }
+    });
+
+    languageMenu.style.display = 'none';
+}
+</script>
 </body>
 </html>
