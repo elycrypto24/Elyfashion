@@ -316,7 +316,7 @@ header::after{
 }
 
 header img{
-    height:120px !important;
+    height:180px !important;
     width:auto !important;
     object-fit:contain;
 }
@@ -517,15 +517,7 @@ background-repeat:no-repeat;
 <a href="#contact">Mawasiliano</a>
     </nav>
 
-        <div class="language-switcher">
-            <button class="language-btn" type="button">🌐 Lugha ▾</button>
-
-            <div class="language-menu">
-                <button type="button">🇹🇿 Kiswahili</button>
-                <button type="button">🇬🇧 English</button>
-                <button type="button">🇰🇲 Comorian</button>
-            </div>
-        </div>
+    
 
     </header>
 
@@ -1700,23 +1692,6 @@ document.getElementById("productPrice").value;
     });
 });
     
-// LANGUAGE SWITCHER
-const languageBtn = document.querySelector('.language-btn');
-const languageMenu = document.querySelector('.language-menu');
-
-languageBtn.addEventListener('click', function(event) {
-    event.stopPropagation();
-
-    if (languageMenu.style.display === 'block') {
-        languageMenu.style.display = 'none';
-    } else {
-        languageMenu.style.display = 'block';
-    }
-});
-
-document.addEventListener('click', function() {
-    languageMenu.style.display = 'none';
-});
 </script>
 </body>
 </html>
