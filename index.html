@@ -983,7 +983,11 @@ background-repeat:no-repeat;
     const product = slide.dataset.product;
 
     const message =
-      "Habari HSE Fashion, naomba kujua bei ya " + product + ".";
+    language === 'en'
+        ? "Hello HSE Fashion, I would like to order " + product + "."
+        : language === 'km'
+            ? "Salama HSE Fashion, ningependa kuagiza " + product + "."
+            : "Habari HSE Fashion, naomba kuagiza " + product + ".";
 
     const link =
       "https://wa.me/" +
