@@ -982,18 +982,27 @@ background-repeat:no-repeat;
 
     const product = slide.dataset.product;
 
-    const message =
-    language === 'en'
-        ? "Hello HSE Fashion, I would like to order " + product + "."
-        : language === 'km'
-            ? "Salama HSE Fashion, ningependa kuagiza " + product + "."
-            : "Habari HSE Fashion, naomba kuagiza " + product + ".";
+const whatsappButton =
+    slide.querySelector(".gallery-whatsapp");
 
-    const link =
-      "https://wa.me/" +
-      whatsappNumber +
-      "?text=" +
-      encodeURIComponent(message);
+whatsappButton.addEventListener("click", function(event) {
+    event.preventDefault();
+
+    const currentLanguage = window.currentLanguage || 'sw';
+
+    const message =
+    currentLanguage === 'en'
+        ? "Hello HSE Fashion, I would like to order " + product + "."
+        : currentLanguage === 'km'
+        ? "Salama HSE Fashion, ndzi hupvenda kuagiza " + product + "."
+        : "Habari HSE Fashion, naomba kuagiza " + product + ".";
+
+    const link = "https://wa.me/" + whatsappNumber +
+        "?text=" + encodeURIComponent(message);
+
+    window.open(link, "_blank");
+});
+
 
     const whatsappButton =
       slide.querySelector(".gallery-whatsapp");
@@ -1811,8 +1820,8 @@ function changeLanguage(language) {
             description.textContent = t.productDescription;
         }
     });
-
     languageMenu.style.display = 'none';
+    window.currentLanguage = language;
 }
 </script>
 </body>
