@@ -990,12 +990,14 @@ whatsappButton.addEventListener("click", function(event) {
 
     const currentLanguage = window.currentLanguage || 'sw';
 
-    const message =
-    currentLanguage === 'en'
-        ? "Hello HSE Fashion, I would like to order " + product + "."
-        : currentLanguage === 'km'
-        ? "Salama HSE Fashion, ndzi hupvenda kuagiza " + product + "."
-        : "Habari HSE Fashion, naomba kuagiza " + product + ".";
+    const price = slide.dataset.price || "";
+
+const message =
+currentLanguage === 'en'
+? "Hello HSE Fashion, I would like to order " + product + " for TSh " + price + "."
+: currentLanguage === 'km'
+? "Salama HSE Fashion, ndzi hupvenda kuagiza " + product + " kwa TSh " + price + "."
+: "Habari HSE Fashion, naomba kuagiza " + product + " kwa TSh " + price + ".";
 
     const link = "https://wa.me/" + whatsappNumber +
         "?text=" + encodeURIComponent(message);
@@ -1796,7 +1798,9 @@ function changeLanguage(language) {
 },
     };
 
-    const t = translations[language];
+    window.currentLanguage = language;
+
+const t = translations[language];
 
     document.querySelector('nav a[href="#home"]').textContent = t.home;
     document.querySelector('nav a[href="#collection"]').textContent = t.collection;
